@@ -1,0 +1,83 @@
+{
+  "name": "cross-notepad",
+  "version": "1.0.0",
+  "description": "A simple, modern, cross-platform Notepad for Windows and Linux with TXT and Markdown support",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "build:win": "electron-builder --win",
+    "build:linux": "electron-builder --linux",
+    "build:all": "electron-builder -mwl",
+    "dist": "electron-builder",
+    "generate:installers": "node ./scripts/generate_installers.js"
+  },
+  "keywords": [
+    "notepad",
+    "markdown",
+    "editor",
+    "cross-platform",
+    "windows",
+    "linux",
+    "txt",
+    "md"
+  ],
+  "author": "Vopple",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "rcedit": "^5.0.2"
+  },
+  "dependencies": {
+    "highlight.js": "^11.11.1",
+    "marked": "^15.0.7"
+  },
+  "build": {
+    "appId": "com.vopple.crossnotepad",
+    "productName": "Cross Notepad",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "msi",
+        "portable"
+      ],
+      "icon": "src/icons/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Cross Notepad"
+    },
+    "msi": {
+      "oneClick": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Cross Notepad"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm",
+        "tar.gz"
+      ],
+      "category": "Utility",
+      "maintainer": "Vopple <voppleus@vopple.uk>",
+      "synopsis": "Fast and modern Notepad with Markdown and local Gemma-4 AI support",
+      "description": "Cross-platform notepad supporting .txt, .md, live preview, and local AI writing tools."
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "ai_service.py",
+      "src/**/*",
+      "node_modules/**/*"
+    ]
+  }
+}
