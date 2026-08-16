@@ -927,6 +927,9 @@ textarea,
   font-family: var(--font-mono) !important;
   font-size: 16px;
   font-weight: 400 !important;
+  font-synthesis: none !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   line-height: 26px;
   letter-spacing: 0.2px;
   border: none;
@@ -939,8 +942,6 @@ textarea,
   user-select: text;
   scroll-behavior: smooth;
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
@@ -951,6 +952,7 @@ textarea,
   -webkit-text-fill-color: #e2e8f0 !important;
   caret-color: var(--dynamic-caret-color, #38bdf8) !important;
   font-weight: 400 !important;
+  font-synthesis: none !important;
 }
 
 [data-theme="nord"] textarea,
@@ -959,6 +961,8 @@ textarea,
   color: #f8fafc !important;
   -webkit-text-fill-color: #f8fafc !important;
   caret-color: var(--dynamic-caret-color, #88c0d0) !important;
+  font-weight: 400 !important;
+  font-synthesis: none !important;
 }
 
 [data-theme="light"] textarea,
@@ -967,6 +971,8 @@ textarea,
   color: #0f172a !important;
   -webkit-text-fill-color: #0f172a !important;
   caret-color: var(--dynamic-caret-color, #2563eb) !important;
+  font-weight: 400 !important;
+  font-synthesis: none !important;
 }
 
 [data-theme="sepia"] textarea,
@@ -975,6 +981,8 @@ textarea,
   color: #24170e !important;
   -webkit-text-fill-color: #24170e !important;
   caret-color: var(--dynamic-caret-color, #9b6b28) !important;
+  font-weight: 400 !important;
+  font-synthesis: none !important;
 }
 
 .editor-textarea.no-wrap {
